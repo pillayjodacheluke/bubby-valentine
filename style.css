@@ -1,0 +1,205 @@
+/* 🌹 Global */
+body {
+  margin: 0;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(to bottom, #000000, #2b000f);
+  overflow: hidden;
+  color: #ffd6e0;
+}
+
+/* Centering */
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Screens */
+.screen {
+  display: none;
+  position: relative;
+  z-index: 2;
+}
+
+.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Text */
+h1 {
+  color: #ff4d6d;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #ff8fab;
+}
+
+p {
+  color: #ffd6e0;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+/* 💓 Heartbeat */
+.heartbeat {
+  animation: heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.1); }
+  40% { transform: scale(1); }
+  60% { transform: scale(1.15); }
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+button {
+  padding: 14px 30px;
+  font-size: 1em;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.yes {
+  background: linear-gradient(135deg, #ff1e56, #ff4d6d);
+  color: white;
+  box-shadow: 0 0 20px rgba(255, 30, 86, 0.6);
+}
+
+.no {
+  background-color: #1a1a1a;
+  color: #ff8fab;
+}
+
+/* 📜 Scroll/Card */
+.scroll {
+  width: 360px;
+  max-height: 80vh;        /* ensures it won’t exceed viewport */
+  background: #0d0d0d;
+  border-radius: 24px;
+  box-shadow: 0 0 40px rgba(255, 30, 86, 0.5);
+  overflow-y: auto;        /* scroll if content is too long */
+  overflow-x: hidden;
+  animation: openScroll 2s ease forwards;
+  display: flex;
+  flex-direction: column;
+}
+
+.scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  background: #ff4d6d;
+  border-radius: 4px;
+}
+
+.scroll::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+.scroll-top,
+.scroll-bottom {
+  height: 20px;
+  background: linear-gradient(to right, #ff1e56, #ff8fab);
+}
+
+.scroll-inner {
+  padding: 26px;
+  word-wrap: break-word;
+}
+
+/* Scroll animation */
+@keyframes openScroll {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+/* 🖼️ Carousel */
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  margin-top: 20px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.carousel img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.carousel img.active {
+  opacity: 1;
+}
+
+/* 🌹 Falling roses */
+.rose {
+  position: fixed;
+  top: -50px;
+  animation: fall linear infinite;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+@keyframes fall {
+  from { transform: translateY(0) rotate(0deg); }
+  to { transform: translateY(110vh) rotate(360deg); }
+}
+
+/* ✨ Sparkles */
+.sparkle {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, #fff, #ff4d6d);
+  border-radius: 50%;
+  animation: sparkle 1s ease-out forwards;
+  z-index: 3;
+}
+
+@keyframes sparkle {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 400px) {
+  .scroll {
+    width: 90%;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+}

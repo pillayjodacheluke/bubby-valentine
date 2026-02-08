@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>💖 Valentine?</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-image: url(images/background.jpg);">
+
+  <!-- Falling roses -->
+  <div id="roses"></div>
+
+  <!-- Sparkles -->
+  <div id="sparkles"></div>
+
+  <!-- Question Screen -->
+  <div id="question" class="screen active center">
+    <h1>Will you be my Valentine? 💕</h1>
+    <div class="buttons">
+      <button class="yes" onclick="showYes()">Yes 💖</button>
+      <button class="no" id="noBtn">No 🙈</button>
+    </div>
+  </div>
+
+  <!-- Yes Screen -->
+  <div id="yesScreen" class="screen center">
+    <h1 class="heartbeat">You said YES, BUBBYYYYYYY ❤️</h1>
+
+    <div class="scroll">
+      <div class="scroll-top"></div>
+
+      <div class="scroll-inner">
+        <h2>For You, My Angel!!! 💌</h2>
+        <p>
+          To My Bubby, ❤️
+There are moments in life that feel like magic, and every moment I spend with you is exactly that. Your smile, your laugh, the way you light up a room without even trying, it makes my world feel brighter, softer, and full of hope. I never knew that someone could make ordinary days feel extraordinary, but you do, effortlessly.
+This Valentine’s Day, I don’t just want to give you a card or flowers, I want to give you my heart in words, to tell you how much you mean to me, how deeply I care for you, and how grateful I am for every little thing you do that makes me fall for you all over again.
+Being with you is a gift I never take for granted, and having you in my life makes everything more beautiful. It would be my greatest honor, my deepest joy, for you to be my Valentine. 💖<br>
+        </p>
+        <div class="carousel">
+          <img src="images/baby5.jpeg" class="active">
+          <img src="images/baby3.jpeg">
+          <img src="images/baby4.jpeg">
+        </div>
+      </div>
+
+      <div class="scroll-bottom"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
